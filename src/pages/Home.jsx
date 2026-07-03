@@ -7,10 +7,11 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState('All');
   
   // Clean data
-  const validCourses = data.courses.filter(c => !c.title.includes('Explore Our') && !c.title.includes('Important Links') && !c.title.includes('Learning paths'));
-  const validEbooks = data.ebooks.filter(e => e.title.includes('eBook') || (!e.title.includes('Important Links') && !e.title.includes('Learning paths') && !e.title.includes('Intimacy Guides')));
+  const validCourses = data.courses;
+  const validEbooks = data.ebooks;
+  const bundles = data.bundles || [];
   
-  const allProducts = [...validCourses, ...validEbooks];
+  const allProducts = [...bundles, ...validCourses, ...validEbooks];
   
   const displayedProducts = activeFilter === 'All' 
     ? allProducts 
@@ -29,7 +30,7 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <a href="#store-section" className="btn btn-primary">
-              Explore Store <ArrowRight size={20} />
+              Explore Bundles & Store <ArrowRight size={20} />
             </a>
           </div>
         </div>
@@ -37,9 +38,9 @@ export default function Home() {
 
       <section id="store-section" className="container" style={{ padding: '2rem 2rem 4rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Collection</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Exclusive Bundles & Products</h2>
           <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-            Explore our complete collection of courses, ebooks, and guides designed to help you build deeper intimacy and better relationships.
+            Explore our complete collection of courses, ebooks, and special bundles designed to help you build deeper intimacy and better relationships.
           </p>
         </div>
         
@@ -49,6 +50,12 @@ export default function Home() {
             onClick={() => setActiveFilter('All')}
           >
             All Products
+          </button>
+          <button 
+            className={`filter-btn ${activeFilter === 'Bundle' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('Bundle')}
+          >
+            Bundles
           </button>
           <button 
             className={`filter-btn ${activeFilter === 'Course' ? 'active' : ''}`}
