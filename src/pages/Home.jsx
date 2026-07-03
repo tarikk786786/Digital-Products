@@ -1,13 +1,20 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import data from '../data.json';
 import ProductCard from '../components/ProductCard';
 
 export default function Home() {
-  // Filter out the non-product items extracted by mistake
-  const featuredCourses = data.courses
-    .filter(c => !c.title.includes('Explore Our') && !c.title.includes('Important Links') && !c.title.includes('Learning paths'))
-    .slice(0, 3);
+  const [activeFilter, setActiveFilter] = useState('All');
+  
+  // Clean data
+  const validCourses = data.courses.filter(c => !c.title.includes('Explore Our') && !c.title.includes('Important Links') && !c.title.includes('Learning paths'));
+  const validEbooks = data.ebooks.filter(e => e.title.includes('eBook') || (!e.title.includes('Important Links') && !e.title.includes('Learning paths') && !e.title.includes('Intimacy Guides')));
+  
+  const allProducts = [...validCourses, ...validEbooks];
+  
+  const displayedProducts = activeFilter === 'All' 
+    ? allProducts 
+    : allProducts.filter(p => p.category === activeFilter);
     
   return (
     <main>
@@ -21,32 +28,53 @@ export default function Home() {
             Join 15,000+ happy couples who have transformed their lives through our premium courses and digital guides.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <Link to="/store" className="btn btn-primary">
+            <a href="#store-section" className="btn btn-primary">
               Explore Store <ArrowRight size={20} />
-            </Link>
-            <a href="https://intimacyacademy.in/ebooks/" className="btn btn-outline" target="_blank" rel="noreferrer">
-              New Ebook Released
             </a>
           </div>
         </div>
       </section>
 
-      <section className="container" style={{ padding: '4rem 2rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
-          <div>
-            <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Popular Courses</h2>
-            <p style={{ color: 'var(--text-muted)' }}>Our highly rated programs to build lasting intimacy.</p>
-          </div>
-          <Link to="/store" style={{ color: 'var(--primary-light)', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600 }}>
-            View All <ArrowRight size={16} />
-          </Link>
+      <section id="store-section" className="container" style={{ padding: '2rem 2rem 4rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Collection</h2>
+          <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+            Explore our complete collection of courses, ebooks, and guides designed to help you build deeper intimacy and better relationships.
+          </p>
+        </div>
+        
+        <div className="filters">
+          <button 
+            className={`filter-btn ${activeFilter === 'All' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('All')}
+          >
+            All Products
+          </button>
+          <button 
+            className={`filter-btn ${activeFilter === 'Course' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('Course')}
+          >
+            Courses
+          </button>
+          <button 
+            className={`filter-btn ${activeFilter === 'Ebook' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('Ebook')}
+          >
+            Ebooks
+          </button>
         </div>
         
         <div className="product-grid">
-          {featuredCourses.map((course, idx) => (
-            <ProductCard key={idx} product={course} />
+          {displayedProducts.map((product, idx) => (
+            <ProductCard key={`${product.title}-${idx}`} product={product} />
           ))}
         </div>
+        
+        {displayedProducts.length === 0 && (
+          <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-muted)' }}>
+            No products found in this category.
+          </div>
+        )}
       </section>
     </main>
   );

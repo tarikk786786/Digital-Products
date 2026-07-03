@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Heart, Search, Menu } from 'lucide-react';
 import Home from './pages/Home';
-import Store from './pages/Store';
 
 function Navigation() {
   const location = useLocation();
@@ -16,7 +15,7 @@ function Navigation() {
         
         <nav className="nav-links">
           <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-          <Link to="/store" className={`nav-link ${location.pathname === '/store' ? 'active' : ''}`}>Store</Link>
+          <a href="#store-section" className="nav-link">Store</a>
           <a href="#" className="nav-link">Community</a>
         </nav>
         
@@ -58,7 +57,6 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
       </Routes>
       <Footer />
     </Router>
