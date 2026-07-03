@@ -1,0 +1,125 @@
+{
+  "courses": [
+    {
+      "category": "Course",
+      "title": "Explore Our All Course's",
+      "price": "",
+      "image": "/assets/intimacy_logo-removebg-preview-e1770614014749.webp",
+      "link": "https://intimacyacademy.in/home/"
+    },
+    {
+      "category": "Course",
+      "title": "Sneh Sutra Practitioner : Learn to Build Loving Connections",
+      "price": "",
+      "image": "/assets/untitled-design-a9e3ef130a357b91cb025d0f6c2ef048.png",
+      "link": "https://intimacyacademy.in/course/sneh-sutra-practitioner/"
+    },
+    {
+      "category": "Course",
+      "title": "Ras Sutra : Explore the Beauty of Love and Bonding",
+      "price": "",
+      "image": "/assets/banner3-6c6ec6feb9977bf8c65c24d81c4cd99b.jpeg",
+      "link": "https://intimacyacademy.in/course/ras-sutra/"
+    },
+    {
+      "category": "Course",
+      "title": "Kama Sutra: Understand the Art of Love and Pleasure",
+      "price": "",
+      "image": "/assets/untitled-design-1-a1df4705341ec4547c3f291f8a731757-1024x576.png",
+      "link": "https://intimacyacademy.in/course/kama-sutra/"
+    },
+    {
+      "category": "Course",
+      "title": "Wakeup from Breakup : Rebuild Yourself with Confidence",
+      "price": "",
+      "image": "/assets/THE-SCIENCE-BEHIND.jpg-1024x576.jpeg",
+      "link": "https://intimacyacademy.in/course/wake-up-from-breakup/"
+    },
+    {
+      "category": "Course",
+      "title": "Emotional Fool : Transform Emotional Weakness into Power",
+      "price": "",
+      "image": "/assets/EMOTIONAL-2.jpg-1-1024x576.jpeg",
+      "link": "https://intimacyacademy.in/course/emotional-fool/"
+    },
+    {
+      "category": "Course",
+      "title": "The Communication MasteryFor Couples",
+      "price": "",
+      "image": "/assets/The-Communication-Mastery-for-Couples-.webp",
+      "link": "https://intimacyacademy.in/course/the-communication-mastery-for-couples/"
+    },
+    {
+      "category": "Course",
+      "title": "The Psychology of Touchand Desire",
+      "price": "",
+      "image": "/assets/The-Psychology-of-Touch-and-Desire-.webp",
+      "link": "https://learn.drnehamehta.com/l/cbc7ec0a85"
+    },
+    {
+      "category": "Course",
+      "title": "Bedroom ConfidenceMastery",
+      "price": "",
+      "image": "/assets/Bedroom-Confidence-Mastery.webp",
+      "link": "https://learn.drnehamehta.com/l/00f3232bef"
+    },
+    {
+      "category": "Course",
+      "title": "The Advanced Stamina Mastery Program",
+      "price": "",
+      "image": "/assets/WhatsApp-Image-2026-04-15-at-10.22.38-AM.jpeg",
+      "link": "https://learn.drnehamehta.com/l/3aef9eb3fb"
+    },
+    {
+      "category": "Course",
+      "title": "Mastering Intimacy Through Lifestyle Habits",
+      "price": "",
+      "image": "/assets/Mastering-Intimacy-through-Lifestyle-Habits-.jpeg",
+      "link": "https://learn.drnehamehta.com/l/cc005a83a1"
+    },
+    {
+      "category": "Course",
+      "title": "Important Links",
+      "price": "",
+      "image": "/assets/intimacy_logo-removebg-preview-e1770614014749.png",
+      "link": "https://intimacyacademy.in/"
+    },
+    {
+      "category": "Course",
+      "title": "Learning paths",
+      "price": "",
+      "image": "/assets/intimacy_logo-removebg-preview-e1770614014749.png",
+      "link": "https://intimacyacademy.in/?page_id=3&preview=true"
+    }
+  ],
+  "ebooks": [
+    {
+      "category": "Ebook",
+      "title": "💖 Intimacy Guides",
+      "price": "",
+      "image": "/assets/intimacy_logo-removebg-preview-e1770614014749.webp",
+      "link": "https://intimacyacademy.in/home/"
+    },
+    {
+      "category": "Ebook",
+      "title": "eBook",
+      "price": "",
+      "image": "/assets/Group-585-1.png",
+      "link": "https://intimacyacademy.in/ebook/51-position/"
+    },
+    {
+      "category": "Ebook",
+      "title": "Important Links",
+      "price": "",
+      "image": "/assets/intimacy_logo-removebg-preview-e1770614014749.png",
+      "link": "https://intimacyacademy.in/"
+    },
+    {
+      "category": "Ebook",
+      "title": "Learning paths",
+      "price": "",
+      "image": "/assets/intimacy_logo-removebg-preview-e1770614014749.png",
+      "link": "https://intimacyacademy.in/?page_id=3&preview=true"
+    }
+  ]
+}
