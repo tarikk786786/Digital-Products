@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function LearningBenefits() {
   const benefits = [
@@ -10,7 +11,7 @@ export default function LearningBenefits() {
   ];
 
   return (
-    <section className="py-24 relative z-10 bg-[#0a0a0f]">
+    <section className="py-24 relative z-10 bg-[#0a0a0f]" aria-label="Learning benefits">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">What You Will <span className="text-gradient-gold">Learn</span></h2>
@@ -28,8 +29,14 @@ export default function LearningBenefits() {
               className="glass-card flex flex-col sm:flex-row overflow-hidden group"
             >
               <div className="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors"></div>
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors" aria-hidden="true"></div>
+                <Image 
+                  src={item.img} 
+                  alt={`${item.title} - Learn techniques for improving relationships`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 40vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                />
               </div>
               <div className="sm:w-3/5 p-8 flex flex-col justify-center">
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4af37] transition-colors">{item.title}</h3>

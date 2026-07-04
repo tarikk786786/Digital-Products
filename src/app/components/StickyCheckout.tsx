@@ -8,7 +8,6 @@ export default function StickyCheckout() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show checkout bar after scrolling down past the hero section (e.g., 500px)
       setIsVisible(window.scrollY > 500);
     };
 
@@ -24,6 +23,8 @@ export default function StickyCheckout() {
           animate={{ y: 0 }}
           exit={{ y: 100 }}
           className="md:hidden fixed bottom-0 left-0 w-full z-50 glass border-t border-white/10 p-4 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]"
+          role="complementary"
+          aria-label="Quick checkout"
         >
           <div className="flex justify-between items-center gap-4">
             <div>
@@ -33,8 +34,9 @@ export default function StickyCheckout() {
             <a
               href="#products"
               className="flex-grow bg-gradient-to-r from-[#d4af37] to-yellow-600 text-black font-bold py-3 px-4 rounded-xl flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+              aria-label="Buy Complete Bundle for ₹999"
             >
-              <FaShoppingCart /> Buy Now
+              <FaShoppingCart aria-hidden="true" /> Buy Now
             </a>
           </div>
         </motion.div>

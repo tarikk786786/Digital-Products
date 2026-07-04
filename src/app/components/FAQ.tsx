@@ -12,7 +12,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 relative z-10 bg-[#0a0a0f]">
+    <section id="faq" className="py-24 relative z-10 bg-[#0a0a0f]" aria-label="Frequently asked questions">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Frequently Asked <span className="text-gradient-gold">Questions</span></h2>
@@ -27,10 +27,14 @@ export default function FAQ() {
                 className={`w-full text-left px-6 py-5 rounded-xl flex justify-between items-center transition-all ${
                   activeIndex === index ? "bg-white/10" : "glass hover:bg-white/5"
                 }`}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-answer-${index}`}
+                id={`faq-question-${index}`}
               >
                 <span className="font-bold text-lg text-white">{faq.q}</span>
                 <FaChevronDown 
-                  className={`text-[#d4af37] transition-transform duration-300 ${activeIndex === index ? "rotate-180" : ""}`} 
+                  className={`text-[#d4af37] transition-transform duration-300 ${activeIndex === index ? "rotate-180" : ""}`}
+                  aria-hidden="true"
                 />
               </button>
               <AnimatePresence>
@@ -41,6 +45,9 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
                   >
                     <div className="p-6 text-gray-400 bg-white/5 rounded-b-xl border-x border-b border-white/5 -mt-2 pt-4">
                       {faq.a}
